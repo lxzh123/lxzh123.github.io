@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://www.lxzh123.com/res/markdown/1487425455886.png">
 <meta property="og:image" content="https://www.lxzh123.com/res/markdown/1487428636512.png">
 <meta property="og:image" content="https://www.lxzh123.com/res/markdown/1487429276094.png">
-<meta property="og:updated_time" content="2019-11-06T16:48:24.991Z">
+<meta property="og:updated_time" content="2019-11-06T16:59:00.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客正文嵌入QQ表情">
 <meta name="twitter:description" content="&amp;ensp; &amp;ensp; &amp;ensp;在迁移以前CSDN的文章到Hexo时，发现CSDN文章一个比较好玩的东东就是可以在内容中加入QQ表情，于是想弄到Hexo里面。 方案一&amp;ensp; &amp;ensp; &amp;ensp;一开始想到的做法是把QQ表情下载下来，上传到七牛，然后用Markdown插入图片功能插入图片。">
@@ -350,13 +350,10 @@
 &ensp; &ensp; &ensp;可是在网页里预览却令人大跌眼镜，这是个什么鬼：
 <img src="https://www.lxzh123.com/res/markdown/1487425242052.png" width="112">
 &ensp; &ensp; &ensp;而且网页里，这个表情点击后还可以弹出来预览，真是画蛇添足。
-&ensp; &ensp; &ensp;看了一下生成后网页的源代码，如下：
-<img src="https://www.lxzh123.com/res/markdown/1487425455886.png" width="748">
-&ensp; &ensp; &ensp;估计是`Fancybox`搞的鬼，它对`html`格式`img标签`做了什么处理吧，这种简单的做法在`Hexo`里不可取，只能另寻方案！
-&ensp; &ensp; &ensp;还好以前接触过一点点`css`，稍微懂得一点点，可以用`background:url(xxx)`的方式将图片作为标签文字的背景嵌入，这样表情就不能点击。
-# 方案二
-&ensp; &ensp; &ensp;首先想到的是`a标签`，于是自定义了几个样式，用于不同的QQ表情，分别引用不同的表情url。*（Hexo主题自定义css样式，见文末）*
 
+<p>&ensp; &ensp; &ensp;看了一下生成后网页的源代码，如下：<br><img src="https://www.lxzh123.com/res/markdown/1487425455886.png" width="748"><br>&ensp; &ensp; &ensp;估计是<code>Fancybox</code>搞的鬼，它对<code>html</code>格式<code>img标签</code>做了什么处理吧，这种简单的做法在<code>Hexo</code>里不可取，只能另寻方案！</p>
+<p>&ensp; &ensp; &ensp;还好以前接触过一点点<code>css</code>，稍微懂得一点点，可以用<code>background:url(xxx)</code>的方式将图片作为标签文字的背景嵌入，这样表情就不能点击。</p>
+<h1 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h1><p>&ensp; &ensp; &ensp;首先想到的是<code>a标签</code>，于是自定义了几个样式，用于不同的QQ表情，分别引用不同的表情url。<em>（Hexo主题自定义css样式，见文末）</em></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#自定义CSS</span><br><span class="line">a.qqangry 	&#123;background:url(https://www.lxzh123.com/res/qqimg/angry.gif)   	no-repeat center center;background-size:90%;&#125;</span><br><span class="line">a.qqawkward &#123;background:url(https://www.lxzh123.com/res/qqimg/awkward.gif) 	no-repeat center center;background-size:90%;&#125;</span><br><span class="line">a.qqcry 	&#123;background:url(https://www.lxzh123.com/res/qqimg/cry.gif)   	no-repeat center center;background-size:90%;&#125;</span><br><span class="line">a.qqcurse 	&#123;background:url(https://www.lxzh123.com/res/qqimg/curse.gif)   	no-repeat center center;background-size:90%;&#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#Markdown正文中引入a标签插入表情</span><br><span class="line">生气表情前面的文字<span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"qqangry"</span>&gt;</span>&amp;ensp; &amp;ensp;<span class="tag">&lt;/<span class="name">a</span>&gt;</span>表情后面的文字</span><br><span class="line">哭泣表情前面的文字<span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"qqcry"</span>&gt;</span>&amp;ensp; &amp;ensp;<span class="tag">&lt;/<span class="name">a</span>&gt;</span>表情后面的文字</span><br></pre></td></tr></table></figure>
@@ -503,7 +500,7 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/categories/index.html">
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
@@ -574,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#方案一"><span class="nav-number">1.</span> <span class="nav-text">方案一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方案三"><span class="nav-number">2.</span> <span class="nav-text">方案三</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附一：Hexo主题自定义CSS样式"><span class="nav-number">3.</span> <span class="nav-text">附一：Hexo主题自定义CSS样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附二：QQ表情排队集合"><span class="nav-number">4.</span> <span class="nav-text">附二：QQ表情排队集合</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#方案一"><span class="nav-number">1.</span> <span class="nav-text">方案一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方案二"><span class="nav-number">2.</span> <span class="nav-text">方案二</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方案三"><span class="nav-number">3.</span> <span class="nav-text">方案三</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附一：Hexo主题自定义CSS样式"><span class="nav-number">4.</span> <span class="nav-text">附一：Hexo主题自定义CSS样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附二：QQ表情排队集合"><span class="nav-number">5.</span> <span class="nav-text">附二：QQ表情排队集合</span></a></li></ol></div>
             
 
           </div>
