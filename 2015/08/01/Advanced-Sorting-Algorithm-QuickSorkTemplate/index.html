@@ -89,12 +89,12 @@
 <meta property="og:site_name" content="龙心之火">
 <meta property="og:description" content="&amp;ensp; &amp;ensp; &amp;ensp; 一个好的算法，不仅要高效的解决实际问题，还要以代码简介、冗余少为荣！ &amp;ensp; &amp;ensp; &amp;ensp; 排序算法进阶(一)中介绍了快速排序算法，但_它只适用于int类型的数组_，当我们实际使用中往往会设计到多种数据类型，如浮点类型、字符串类型，难道需要再为这些类型重写一个除了类型以外其他都一样的方法吗？ &amp;ensp; &amp;ensp; &amp;ensp; 不">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://www.lxzh123.com/res/markdown/1487347055581.png">
-<meta property="og:updated_time" content="2019-06-02T11:53:09.000Z">
+<meta property="og:image" content="https://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1487347055581.png">
+<meta property="og:updated_time" content="2019-11-06T18:21:07.997Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序算法进阶(一)——快速排序算法(基本类型与复杂类型)">
 <meta name="twitter:description" content="&amp;ensp; &amp;ensp; &amp;ensp; 一个好的算法，不仅要高效的解决实际问题，还要以代码简介、冗余少为荣！ &amp;ensp; &amp;ensp; &amp;ensp; 排序算法进阶(一)中介绍了快速排序算法，但_它只适用于int类型的数组_，当我们实际使用中往往会设计到多种数据类型，如浮点类型、字符串类型，难道需要再为这些类型重写一个除了类型以外其他都一样的方法吗？ &amp;ensp; &amp;ensp; &amp;ensp; 不">
-<meta name="twitter:image" content="https://www.lxzh123.com/res/markdown/1487347055581.png">
+<meta name="twitter:image" content="https://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1487347055581.png">
 
 
 
@@ -359,7 +359,7 @@
 
 <p>&ensp; &ensp; &ensp; 然而，在实际使用过程中，并非总是那么顺心如意<i class="qqsad">&ensp; &ensp;</i>。
 &ensp; &ensp; &ensp; 虽然上面的String类型数组可以成功应用该排序方法，但之前传入的int[]数组在这时却不能用了<i class="qqcry">&ensp; &ensp;</i>。
-<img src="https://www.lxzh123.com/res/markdown/1487347055581.png" width="404"></p>
+<img src="https://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1487347055581.png" width="404"></p>
 <p>&ensp; &ensp; &ensp; 如上图，该方法不识别int类型了，怎么回事？？？<i class="qqdoubt">&ensp; &ensp;</i><br>百思不得其解，只能网上去搜咯<del>~</del><br>&ensp; &ensp; &ensp; 一开始还以为自己泛型用得不对，以为不是那么回事。<br>&ensp; &ensp; &ensp; 可是<a href="http://www.cnblogs.com/anrainie/archive/2012/03/09/2387272.html" target="_blank" rel="noopener"><font color="blue">这篇</font></a>文章里用得很好的，其中的<code>display</code>方法可以传入<code>int</code>、<code>String</code>、<code>float</code>类型参数，为什么我的不行呢？<i class="qqdoubt">&ensp; &ensp;</i><br>&ensp; &ensp; &ensp; 回过头来自习对比一下两者的用法，不难看出我们这里多了一点：<code>extends Comparable&lt;T&gt;</code>，会不会是它在搞鬼呢？<i class="qqdoubt">&ensp; &ensp; </i><br>&ensp; &ensp; &ensp; 顿时间突然记起来我们平时使用<code>List</code>、<code>ArrayList</code>时，如果要创建整型数组，是不能用<code>List&lt;int&gt;</code>的，必须用List&lt;<font color="red">Integer</font>&gt;才行，同理<code>List &lt;float&gt;</code>、<code>List &lt;double&gt;</code>都必须用List&lt;<font color="red">Float</font>&gt;、List&lt;<font color="red">Double</font>&gt;。<br>&ensp; &ensp; &ensp; 为啥呢？<br>&ensp; &ensp; &ensp; 网上搜了一下“<strong>java中的int与Integer的区别</strong>”，果然发现有猫腻<i class="qqcurse">&ensp; &ensp;</i>，见<a href="http://www.cnblogs.com/shenliang123/archive/2011/10/27/2226903.html" target="_blank" rel="noopener"><font color="blue">这里</font></a>，讲得很详细，只恨自己java基础掌握得不牢啊！！！<i class="qqangry">&ensp; &ensp;</i><br>&ensp; &ensp; &ensp; 还有一点就是，基本数据类型是不需要实现<code>comparable</code>接口就可以直接进行比较的，而复杂类都实现了该接口，不信可以试一试，<a href="http://blog.chinaunix.net/uid-20586655-id-294755.html" target="_blank" rel="noopener"><font color="blue">这里</font></a>有个方法可以验证一个类是否实现了某个类接口，可以拿来判断一下<code>Integer</code>、<code>Double</code>、<code>Float</code>、<code>String</code>。（注：传递的接口名需要包括接口的全名，即包括包名的，这里应该是：<code>java.lang.Comparable</code>，而不是<code>Comparable</code>）</p>
 <p>&ensp; &ensp; &ensp; 到了这里，终于搞明白了，扩展的排序方法在使用时，传入的参数只能是复杂类型，基本类型就没办法了咯~<i class="qqcry">&ensp; &ensp;</i></p>
 

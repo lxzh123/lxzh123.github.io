@@ -89,14 +89,14 @@
 <meta property="og:site_name" content="龙心之火">
 <meta property="og:description" content="[TOC] 广告过滤最近在浏览网页的时候，感觉有些网站的广告真的很烦，一不好看影响视觉，二总在切图吸引注意力，三有些广告有点少儿不宜，于是琢磨该如何过滤广告呢？ 起初这个想法源自于公司办公的时候。由于公司访问外网必须要配置代理，而在配置代理的地方有个高级设置，里面可以通过精确/模糊匹配的方式过滤一些网址，本来这个功能平时一直用于过滤公司内部的一些服务器或内部网址等，避免也走代理导致无法访问。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://www.lxzh123.com/res/markdown/1522419990947.png">
-<meta property="og:image" content="https://www.lxzh123.com/res/markdown/1522422416692.png">
-<meta property="og:image" content="https://www.lxzh123.com/res/markdown/1522422659640.png">
-<meta property="og:updated_time" content="2019-06-02T11:52:58.000Z">
+<meta property="og:image" content="https://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1522419990947.png">
+<meta property="og:image" content="https://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1522422416692.png">
+<meta property="og:image" content="https://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1522422659640.png">
+<meta property="og:updated_time" content="2019-11-06T18:21:07.949Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="优雅的过滤广告">
 <meta name="twitter:description" content="[TOC] 广告过滤最近在浏览网页的时候，感觉有些网站的广告真的很烦，一不好看影响视觉，二总在切图吸引注意力，三有些广告有点少儿不宜，于是琢磨该如何过滤广告呢？ 起初这个想法源自于公司办公的时候。由于公司访问外网必须要配置代理，而在配置代理的地方有个高级设置，里面可以通过精确/模糊匹配的方式过滤一些网址，本来这个功能平时一直用于过滤公司内部的一些服务器或内部网址等，避免也走代理导致无法访问。">
-<meta name="twitter:image" content="https://www.lxzh123.com/res/markdown/1522419990947.png">
+<meta name="twitter:image" content="https://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1522419990947.png">
 
 
 
@@ -343,15 +343,15 @@
 <a id="more"></a>
 
 <p>既然这功能能够过滤内网不走代理，那么是不是也可以过滤广告不走代理呢？</p>
-<p>抱着试一试的心态，凭借着一点点网页调试的技能，抓到一个广告的网址(后面介绍如何抓广告网址)，将它的host地址塞到代理过滤列表里，保存，然后刷新网页，广告蹦不出来啦<del>嘚瑟～(￣▽￣～)(～￣▽￣)～嘚瑟</del><br>见下图：<br><img src="https://www.lxzh123.com/res/markdown/1522419990947.png" width="940"></p>
+<p>抱着试一试的心态，凭借着一点点网页调试的技能，抓到一个广告的网址(后面介绍如何抓广告网址)，将它的host地址塞到代理过滤列表里，保存，然后刷新网页，广告蹦不出来啦<del>嘚瑟～(￣▽￣～)(～￣▽￣)～嘚瑟</del><br>见下图：<br><img src="https://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1522419990947.png" width="940"></p>
 <p>图1为本地代理设置入口，对于Windows系统一般很多浏览器的代理都可以配置使用Internet Explorer的代理，因此这里配置可以多其他浏览器都生效。图2中勾选”跳过本地地址的代理服务器”，点击”高级”按钮进入图3，在”例外情况”输入框中填入需要过滤的广告网址host。</p>
 <blockquote>
 <p>注：以上方法对于公司通过代理上外网有效。</p>
 </blockquote>
 <p>于是，又去几个有广告的页面，分别抓到他们的广告网址纷纷丢到过滤列表了，QND，有的网页同一个广告挂了三四个，哥全给你毙了，顿时网页清净多了~</p>
 <h1 id="抓取网页中的广告链接"><a href="#抓取网页中的广告链接" class="headerlink" title="抓取网页中的广告链接"></a>抓取网页中的广告链接</h1><p>以下针对Chrome浏览器简单介绍，其他浏览器类似：</p>
-<p>如图，CSDN博客左侧中与右下角的广告是我们本次的目标：<br><img src="https://www.lxzh123.com/res/markdown/1522422416692.png" width="1500"></p>
-<p>在 菜单》工具》开发者工具 打开<code>开发人员工具</code>辅助面板，依次展开里面的<code>body</code>以及多级<code>div</code>标签，在展开的过程中通过在不同的div移动，观察上面网页上浅蓝色蒙版当前定位，刚好盖在广告上时就说嘛找到了，从而快速找到是那个div下面有广告链接，如下图：<br><img src="https://www.lxzh123.com/res/markdown/1522422659640.png" width="1500"><br>高亮的<code>div</code>即是我们要找的位置，注意到里面有个<code>src=//cee1.iteye.com/lgyyovfyh.js</code>的链接，OK，其中的<code>cee1.iteye.com</code>就是广告链接的<code>host</code>地址，依次类推，本页面右下角的广告host为<code>pos.baidu.com</code>。
+<p>如图，CSDN博客左侧中与右下角的广告是我们本次的目标：<br><img src="https://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1522422416692.png" width="1500"></p>
+<p>在 菜单》工具》开发者工具 打开<code>开发人员工具</code>辅助面板，依次展开里面的<code>body</code>以及多级<code>div</code>标签，在展开的过程中通过在不同的div移动，观察上面网页上浅蓝色蒙版当前定位，刚好盖在广告上时就说嘛找到了，从而快速找到是那个div下面有广告链接，如下图：<br><img src="https://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1522422659640.png" width="1500"><br>高亮的<code>div</code>即是我们要找的位置，注意到里面有个<code>src=//cee1.iteye.com/lgyyovfyh.js</code>的链接，OK，其中的<code>cee1.iteye.com</code>就是广告链接的<code>host</code>地址，依次类推，本页面右下角的广告host为<code>pos.baidu.com</code>。
 不过，本页面的作者比较厚道，代码中直接有注释<code>&lt;!--投放代码--&gt;</code>、<code>&lt;!--右下角弹窗广告--&gt;</code>，有助于快速找到广告的标签。</p>
 <p>通过以上方式配合公司代理过滤，就可以达到过滤广告的目的，以后遇到一个抓一个，从此网页浏览一片清净~</p>
 <h1 id="非公司网络如何过滤广告呢"><a href="#非公司网络如何过滤广告呢" class="headerlink" title="非公司网络如何过滤广告呢"></a>非公司网络如何过滤广告呢</h1><p>但是回到家，不需要公司代理，该如何过滤广告呢？用第三方软件、插件？难选！效果不佳！不靠谱！！！不靠谱！！！不靠谱！！！（<code>重要的事说三遍</code>）</p>

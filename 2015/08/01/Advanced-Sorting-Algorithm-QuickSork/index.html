@@ -90,7 +90,7 @@
 <meta property="og:description" content="&amp;ensp; &amp;ensp; &amp;ensp; 偶然间看了一篇微信上的文章，CSDN链接，里面介绍了十大算法，分别是： 一：快速排序算法二：堆排序算法三：归并排序四：二分查找算法五：BFPRT(线性查找算法)六：DFS(深度优先搜索)七：BFS(广度优先搜索)八：Dijkstra算法九：动态规划算法十：朴素贝叶斯分类算法">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_11.png">
-<meta property="og:updated_time" content="2019-06-02T11:52:49.000Z">
+<meta property="og:updated_time" content="2019-11-06T18:21:07.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序算法进阶(一)——快速排序算法">
 <meta name="twitter:description" content="&amp;ensp; &amp;ensp; &amp;ensp; 偶然间看了一篇微信上的文章，CSDN链接，里面介绍了十大算法，分别是： 一：快速排序算法二：堆排序算法三：归并排序四：二分查找算法五：BFPRT(线性查找算法)六：DFS(深度优先搜索)七：BFS(广度优先搜索)八：Dijkstra算法九：动态规划算法十：朴素贝叶斯分类算法">
@@ -339,7 +339,7 @@
 <p>一：快速排序算法<br>二：堆排序算法<br>三：归并排序<br>四：二分查找算法<br>五：BFPRT(线性查找算法)<br>六：DFS(深度优先搜索)<br>七：BFS(广度优先搜索)<br>八：Dijkstra算法<br>九：动态规划算法<br>十：朴素贝叶斯分类算法</p>
 <a id="more"></a>
 <p>&ensp; &ensp; &ensp; 虽然前面自己整理里几个基本排序查找算法，但看了这篇文章真有点惭愧啊！因此想抽空学习整理一下这些算法。</p>
-<p>&ensp; &ensp; &ensp; 首先就从<a href="http://student.zjzk.cn/course_ware/data_structure/web/paixu/paixu8.3.2.1.htm" target="_blank" rel="noopener"><font color="blue">快速排序算法</font></a>入手，废话不多说，上图：<br>&lt;img src=”<a href="https://www.lxzh123.com/res/Sorting_quicksort_anim.gif&quot;" target="_blank" rel="noopener">https://www.lxzh123.com/res/Sorting_quicksort_anim.gif&quot;</a> width=”500”/ alt=”快速排序”&gt;</p>
+<p>&ensp; &ensp; &ensp; 首先就从<a href="http://student.zjzk.cn/course_ware/data_structure/web/paixu/paixu8.3.2.1.htm" target="_blank" rel="noopener"><font color="blue">快速排序算法</font></a>入手，废话不多说，上图：<br>&lt;img src=”<a href="https://lxzh.oss-cn-hangzhou.aliyuncs.com/Sorting_quicksort_anim.gif&quot;" target="_blank" rel="noopener">https://lxzh.oss-cn-hangzhou.aliyuncs.com/Sorting_quicksort_anim.gif&quot;</a> width=”500”/ alt=”快速排序”&gt;</p>
 <p>&ensp; &ensp; &ensp; 不过，正式写之前还是有必要做一些简单介绍，掌握一个好的算法，它的背景尝试也得了解一下嘛！</p>
 <h1 id="算法的概念："><a href="#算法的概念：" class="headerlink" title="算法的概念："></a>算法的概念：</h1><p>&ensp; &ensp; &ensp; <strong>快速排序</strong>（<code>Quicksort</code>）是对冒泡排序的一种改进。由<strong>C. A. R. Hoare</strong>在1962年提出。</p>
 <h1 id="算法思想："><a href="#算法思想：" class="headerlink" title="算法思想："></a>算法思想：</h1><p>&ensp; &ensp; &ensp; <strong>用分治法</strong>（<code>Divide and conquer</code>）策略来把一个串行（list）分为两个子串（sub-lists）：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
