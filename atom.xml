@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.lxzh123.com/"/>
-  <updated>2019-11-06T18:21:07.949Z</updated>
+  <updated>2019-11-07T18:24:44.964Z</updated>
   <id>http://blog.lxzh123.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何查看Gradle插件的源码</title>
+    <link href="http://blog.lxzh123.com/2019/11/08/View-Gradle-Plugin-Source-code/"/>
+    <id>http://blog.lxzh123.com/2019/11/08/View-Gradle-Plugin-Source-code/</id>
+    <published>2019-11-07T18:10:40.000Z</published>
+    <updated>2019-11-07T18:24:44.964Z</updated>
+    
+    <content type="html"><![CDATA[<p>在进行自定义Gradle插件开发的过程中，除了查阅官方文档，在网上搜索开源插件源码以外，还有一种方式可以获取到一些公开的插件的源码。</p><p>首先我们平时通过<code>apply plugin: &#39;com.android.application&#39;</code>引用的android这个插件的源码我们可以从aosp代码仓库里面找到，<a href="https://android.googlesource.com/platform/tools/base/+/refs/tags/android-10.0.0_r11/build-system/gradle/src/main/groovy/com/android/build/gradle/AppPlugin.groovy" target="_blank" rel="noopener">传送门</a><br>（这里给的是android-10.0.0_r11的，历史版本可以自行查找，需要fan qiang）</p><p>比如下面<code>firebase</code>用到的<code>google-service</code>插件也可以从aosp中<a href="https://android.googlesource.com/platform/tools/base/+/refs/tags/android-10.0.0_r11/build-system/google-services/src/main/groovy/com/google/gms/googleservices/GoogleServicesPlugin.groovy?autodive=0%2F%2F" target="_blank" rel="noopener">传送门</a>找到</p><p><code>apply plugin: &#39;com.google.gms.google-services&#39;</code></p><p>接着就是一些商用或者非商用sdk使用到的gradle插件了，往往我们比较好奇这个插件里面到底干了啥，或者刚好它有个好用的功能我也想借鉴一下，那么看其源码肯定是最直接好用的办法。</p><p>下面举个例子，比如：ShareSDK</p><ol><li>按照<a href="https://www.mob.com/wiki/detailed?wiki=ShareSDK_Android_Title_ksjc&id=14" target="_blank" rel="noopener">官方文档</a>流程，依次完成以下两步：</li></ol><ul><li><p>打开项目根目录的build.gradle，在buildscrip–&gt;dependencies 模块下面添加 </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">classpath ‘com.mob.sdk:MobSDK:2018.0319.1724’，如下所示；</span><br><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        ...</span><br><span class="line">        classpath &quot;com.mob.sdk:MobSDK:2018.0319.1724&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>在使用到Mob产品的module下面的build.gradle文件里面添加引用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &apos;com.mob.sdk&apos;</span><br></pre></td></tr></table></figure></li></ul><ol start="2"><li>添加依赖应用插件完毕后，点AS右上角的”sync now”同步一下</li><li>同步完成后首先在AS左侧的Project视图中<code>External Library</code>下面找找看是否有ShareSDK他家的sdk引入，如下表示引入成功。</li></ol><img src="http://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1573150864041.png" width="235"><ol start="4"><li>既然引入成功了，因为他们的插件名称叫<code>com.mob.sdk</code>，那么这个插件就一定缓存到我们PC本地了，所以用这个名字搜一下即可(Windows下有Everything这个工具简直完美), 很快就能在gradle的缓存目录找到这个插件，如下图(我这里修改了gradle的默认位置，Windows一般会在C盘：<code>C:\Users\xxx\.gradle\caches\modules-2\files-2.1</code>下面，Mac一般在<code>/Users/xxx/.gradle/caches/modules-2/files-2.1</code>)，</li></ol><img src="http://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1573150886274.png" width="309"><ol start="5"><li>找到插件位置后，在目录下继续找，会找到一个<code>xxx-source.jar</code>的文件，这个就是插件源码打成的jar包，实际就是个压缩文件，包含了插件groovy源码，解压即可，源码带注释真香ing<i class="qqlaugh">&ensp; &ensp;</i>。</li></ol><img src="http://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1573150900726.png" width="354">]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在进行自定义Gradle插件开发的过程中，除了查阅官方文档，在网上搜索开源插件源码以外，还有一种方式可以获取到一些公开的插件的源码。&lt;/p&gt;
+&lt;p&gt;首先我们平时通过&lt;code&gt;apply plugin: &amp;#39;com.android.application&amp;#39;&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="Little skill" scheme="http://blog.lxzh123.com/tags/Little-skill/"/>
+    
+  </entry>
   
   <entry>
     <title>简单三步查看你浏览器保存的登录帐号密码</title>
