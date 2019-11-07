@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1573150864041.png">
 <meta property="og:image" content="http://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1573150886274.png">
 <meta property="og:image" content="http://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1573150900726.png">
-<meta property="og:updated_time" content="2019-11-07T18:24:44.964Z">
+<meta property="og:updated_time" content="2019-11-07T18:29:01.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何查看Gradle插件的源码">
 <meta name="twitter:description" content="在进行自定义Gradle插件开发的过程中，除了查阅官方文档，在网上搜索开源插件源码以外，还有一种方式可以获取到一些公开的插件的源码。 首先我们平时通过apply plugin: &amp;#39;com.android.application&amp;#39;引用的android这个插件的源码我们可以从aosp代码仓库里面找到，传送门（这里给的是android-10.0.0_r11的，历史版本可以自行查找，需要f">
@@ -338,11 +338,13 @@
 
       
         <p>在进行自定义Gradle插件开发的过程中，除了查阅官方文档，在网上搜索开源插件源码以外，还有一种方式可以获取到一些公开的插件的源码。</p>
-<p>首先我们平时通过<code>apply plugin: &#39;com.android.application&#39;</code>引用的android这个插件的源码我们可以从aosp代码仓库里面找到，<a href="https://android.googlesource.com/platform/tools/base/+/refs/tags/android-10.0.0_r11/build-system/gradle/src/main/groovy/com/android/build/gradle/AppPlugin.groovy" target="_blank" rel="noopener">传送门</a><br>（这里给的是android-10.0.0_r11的，历史版本可以自行查找，需要fan qiang）</p>
+<p>首先我们平时通过<code>apply plugin: &#39;com.android.application&#39;</code>引用的android这个插件的源码我们可以从aosp代码仓库里面找到，<a href="https://android.googlesource.com/platform/tools/base/+/refs/tags/android-10.0.0_r11/build-system/gradle/src/main/groovy/com/android/build/gradle/AppPlugin.groovy" target="_blank" rel="noopener">传送门</a>（这里给的是android-10.0.0_r11的，历史版本可以自行查找，需要fan qiang）</p>
 <p>比如下面<code>firebase</code>用到的<code>google-service</code>插件也可以从aosp中<a href="https://android.googlesource.com/platform/tools/base/+/refs/tags/android-10.0.0_r11/build-system/google-services/src/main/groovy/com/google/gms/googleservices/GoogleServicesPlugin.groovy?autodive=0%2F%2F" target="_blank" rel="noopener">传送门</a>找到</p>
 <p><code>apply plugin: &#39;com.google.gms.google-services&#39;</code></p>
 <p>接着就是一些商用或者非商用sdk使用到的gradle插件了，往往我们比较好奇这个插件里面到底干了啥，或者刚好它有个好用的功能我也想借鉴一下，那么看其源码肯定是最直接好用的办法。</p>
-<p>下面举个例子，比如：ShareSDK</p>
+<a id="more"></a>
+
+<p>下面举个例子，比如：<strong>ShareSDK</strong></p>
 <ol>
 <li>按照<a href="https://www.mob.com/wiki/detailed?wiki=ShareSDK_Android_Title_ksjc&id=14" target="_blank" rel="noopener">官方文档</a>流程，依次完成以下两步：</li>
 </ol>
