@@ -10,5 +10,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://blog.lxzh123.com/sitemap.xml
-Sitemap: http://blog.lxzh123.com/baidusitemap.xml
+Sitemap: http://blog.lxzh.app/sitemap.xml
+Sitemap: http://blog.lxzh.app/baidusitemap.xml

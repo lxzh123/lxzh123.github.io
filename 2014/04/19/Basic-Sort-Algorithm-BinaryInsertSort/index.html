@@ -85,12 +85,12 @@
 <meta name="keywords" content="data structure">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基础排序算法(三)——对半插入排序">
-<meta property="og:url" content="http://blog.lxzh123.com/2014/04/19/Basic-Sort-Algorithm-BinaryInsertSort/index.html">
+<meta property="og:url" content="http://blog.lxzh.app/2014/04/19/Basic-Sort-Algorithm-BinaryInsertSort/index.html">
 <meta property="og:site_name" content="龙心之火">
 <meta property="og:description" content="&amp;ensp; &amp;ensp; &amp;ensp; 之前的文章介绍了冒泡排序和插入排序，这里再补充一个对半插入排序算法，它与对半查找算法（二分查找算法）有点相似之处。 &amp;ensp; &amp;ensp; &amp;ensp; 还是先上代码：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_11.png">
-<meta property="og:updated_time" content="2017-02-18T15:43:58.000Z">
+<meta property="og:updated_time" content="2020-12-25T15:50:58.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础排序算法(三)——对半插入排序">
 <meta name="twitter:description" content="&amp;ensp; &amp;ensp; &amp;ensp; 之前的文章介绍了冒泡排序和插入排序，这里再补充一个对半插入排序算法，它与对半查找算法（二分查找算法）有点相似之处。 &amp;ensp; &amp;ensp; &amp;ensp; 还是先上代码：">
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://blog.lxzh123.com/2014/04/19/Basic-Sort-Algorithm-BinaryInsertSort/">
+  <link rel="canonical" href="http://blog.lxzh.app/2014/04/19/Basic-Sort-Algorithm-BinaryInsertSort/">
 
 
 
@@ -268,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.lxzh123.com/2014/04/19/Basic-Sort-Algorithm-BinaryInsertSort/">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxzh.app/2014/04/19/Basic-Sort-Algorithm-BinaryInsertSort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lxzh">
@@ -335,13 +335,13 @@
       
 
       
-        <p>&ensp; &ensp; &ensp; 之前的文章介绍了<a href="http://blog.lxzh123.com/2013/09/25/Basic-Sort-Algorithm-BubbleSort/"><font color="blue">冒泡排序</font></a>和<a href="http://blog.lxzh123.com/2013/09/30/Basic-Sort-Algorithm-InsertionSort/"><font color="blue">插入排序</font></a>，这里再补充一个<code>对半插入排序</code>算法，它与<code>对半查找算法</code>（<code>二分查找算法</code>）有点相似之处。</p>
+        <p>&ensp; &ensp; &ensp; 之前的文章介绍了<a href="http://blog.lxzh.app/2013/09/25/Basic-Sort-Algorithm-BubbleSort/"><font color="blue">冒泡排序</font></a>和<a href="http://blog.lxzh.app/2013/09/30/Basic-Sort-Algorithm-InsertionSort/"><font color="blue">插入排序</font></a>，这里再补充一个<code>对半插入排序</code>算法，它与<code>对半查找算法</code>（<code>二分查找算法</code>）有点相似之处。</p>
 <p>&ensp; &ensp; &ensp; 还是先上代码：</p>
 <a id="more"></a>
 
 <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">HalfInsertSort</span>(<span class="params"><span class="keyword">int</span>[] array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span>, temp, low, high, mid;</span><br><span class="line">    <span class="keyword">int</span> count = array.Length;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        temp = array[i];</span><br><span class="line">        low = <span class="number">0</span>;</span><br><span class="line">        high = i - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (low &lt;= high)</span><br><span class="line">        &#123;</span><br><span class="line">            mid = (low + high) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (temp &lt; array[mid]) high = mid - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> low = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (j = i - <span class="number">1</span>; j &gt;= low; j--) array[j + <span class="number">1</span>] = array[j];</span><br><span class="line">        array[low] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>&ensp; &ensp; &ensp; 在<code>Program</code>的<code>Main</code>函数里New一个<a href="http://blog.lxzh123.com/2013/09/25/Basic-Sort-Algorithm-BubbleSort/"><font color="blue">（一）</font></a>中写的那个<code>CSharpArray</code>类，调用其中的方法测试：</p>
+<p>&ensp; &ensp; &ensp; 在<code>Program</code>的<code>Main</code>函数里New一个<a href="http://blog.lxzh.app/2013/09/25/Basic-Sort-Algorithm-BubbleSort/"><font color="blue">（一）</font></a>中写的那个<code>CSharpArray</code>类，调用其中的方法测试：</p>
 <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">BasicStructure</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            CSharpArray csharArray = <span class="keyword">new</span> CSharpArray(<span class="number">8</span>);</span><br><span class="line">            <span class="keyword">int</span>[] array = csharArray.getArray();</span><br><span class="line">            Console.WriteLine(<span class="string">"排序前:"</span>);</span><br><span class="line">            Console.WriteLine();</span><br><span class="line">            csharArray.PrintArray(array);</span><br><span class="line">            Console.WriteLine();</span><br><span class="line">            Console.WriteLine(<span class="string">"排序后:"</span>);</span><br><span class="line">            csharArray.HalfInsertSort(array);</span><br><span class="line">            csharArray.PrintArray(array);</span><br><span class="line"></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>&ensp; &ensp; &ensp; 输出结果：<br>&ensp; &ensp; &ensp; 排序前:</p>
@@ -588,7 +588,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
