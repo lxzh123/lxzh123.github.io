@@ -435,8 +435,8 @@
 <p>正常情况下对于主线程而言这里的<code>run</code>方法里会进入死循环，也就是当前的主线程<code>ActivityThread</code>的 main 函数中的<code>Loop.loop()</code>。</p>
 <p>一旦主线程中出现未捕获的异常，就会跳出主线程循环，从而离开这里的代码块，回调<code>art::ThreadList::Unregister</code>方法，然后调用<code>art::Thread::Destroy</code>方法，最后通过<code>HandleUncaughtExceptions</code>方法分发异常， 这也正好与上文中的异常堆栈吻合。</p>
 <br>
-**现在又问题来了，为什么出现异常就会退出这个线程循环呢？**
 
+<p><strong>现在又问题来了，为什么出现异常就会退出这个线程循环呢？</strong></p>
 <p>这个问题要从 Java 的字节码指令执行上说起，首先我们举个简单的例子，<code>crash()</code>方法中触发一个简单的除零异常：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Crash</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">crash</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">10</span>/<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 

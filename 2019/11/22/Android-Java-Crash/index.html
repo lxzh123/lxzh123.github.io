@@ -91,7 +91,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1574357780097.png">
 <meta property="og:image" content="http://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1574357715891.png">
-<meta property="og:updated_time" content="2021-02-03T16:45:58.513Z">
+<meta property="og:updated_time" content="2021-02-03T17:09:42.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android中Java的异常处理机制">
 <meta name="twitter:description" content="Android中，Java虚拟机（JVM）是如何处理异常的呢？ 在执行main函数的时候，如果运行过程中遇到异常问题，有两种情况：  通过try-catch捕获已知或者未知的异常将问题处理并跳过，然后继续运行，确保程序不会崩溃 但并非所有的异常都是可预知的，针对没有捕获到的异常，会一直向上抛，异常一旦被Thread.run()或主线程抛出后就不能在程序中对异常进行捕获，最终只能由JVM捕获由JVM">
@@ -437,8 +437,8 @@
 <p>正常情况下对于主线程而言这里的<code>run</code>方法里会进入死循环，也就是当前的主线程<code>ActivityThread</code>的 main 函数中的<code>Loop.loop()</code>。</p>
 <p>一旦主线程中出现未捕获的异常，就会跳出主线程循环，从而离开这里的代码块，回调<code>art::ThreadList::Unregister</code>方法，然后调用<code>art::Thread::Destroy</code>方法，最后通过<code>HandleUncaughtExceptions</code>方法分发异常， 这也正好与上文中的异常堆栈吻合。</p>
 <br>
-**现在又问题来了，为什么出现异常就会退出这个线程循环呢？**
 
+<p><strong>现在又问题来了，为什么出现异常就会退出这个线程循环呢？</strong></p>
 <p>这个问题要从 Java 的字节码指令执行上说起，首先我们举个简单的例子，<code>crash()</code>方法中触发一个简单的除零异常：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Crash</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">crash</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">10</span>/<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
