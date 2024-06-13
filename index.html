@@ -263,6 +263,271 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxzh.app/2024/06/11/Build-mars-xlog-on-Windows/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lxzh">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="龙心之火">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2024/06/11/Build-mars-xlog-on-Windows/" itemprop="url">Build-mars-xlog-on-Windows</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-06-11T01:38:26+08:00">
+                2024-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="一-环境准备"><a href="#一-环境准备" class="headerlink" title="一. 环境准备"></a>一. 环境准备</h1><p>安装 cmake 以及 python2.7， 以及下载 ndk-r16b，并配置环境变量 NDK_ROOT 指向 ndk 路径。</p>
+<p>如果是 Windows 系统还需要安装 cygwin，并务必要安装其中的 make, gcc gdb。 然后把 cygwin 的 bin 目录配置到环境变量中的 PATH 中</p>
+<h2 id="1-安装cmake"><a href="#1-安装cmake" class="headerlink" title="1. 安装cmake"></a>1. 安装cmake</h2><p>推荐直接使用 Android Studio 里的 SDK Manager 进行下载 cmake 安装，安装后配置环境变量即可</p>
+<h2 id="2-安装python2-7"><a href="#2-安装python2-7" class="headerlink" title="2. 安装python2.7"></a>2. 安装python2.7</h2><p><a href="https://www.python.org/downloads/release/python-2716/下载后双击安装包进行安装" target="_blank" rel="noopener">https://www.python.org/downloads/release/python-2716/下载后双击安装包进行安装</a></p>
+<h3 id="2-1-选择是否将Python-exe添加到系统Path环境变量"><a href="#2-1-选择是否将Python-exe添加到系统Path环境变量" class="headerlink" title="2.1 选择是否将Python.exe添加到系统Path环境变量"></a>2.1 选择是否将Python.exe添加到系统Path环境变量</h3><p>（也可以安装完成后手动在环境变量添加/删除Python.exe 路径）<br><img src="https://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1718300808775.png" width="245"></p>
+<p>###2.2 安装后验证通过应该是这样：<br><img src="https://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1718300842839.png" width="392"></p>
+<h2 id="3-安装-cygwin"><a href="#3-安装-cygwin" class="headerlink" title="3. 安装 cygwin"></a>3. 安装 cygwin</h2><p><a href="https://cygwin.com/install.html" target="_blank" rel="noopener">https://cygwin.com/install.html</a><br>3.1 下载后点击setup-x86_64.exe安装，出现安装画面。直接点“下一步”，出现安装模式的对话框，如下图所示：<br><img src="https://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1718300886841.png" width="252"><br>我们看到有三种安装模式：</p>
+<ul>
+<li>Install from Internet，这种模式直接从Internet安装，适合网速较快的情况；</li>
+<li>Download Without Installing，这种模式只从网上下载Cygwin的组件包，但不安装；</li>
+<li>Install from Local Directory，这种模式与上面第二种模式对应，当你的Cygwin组件包已经下载到本地，则可以使用此模式从本地安装Cygwin。<br>在这一步，需要注意，为了获得最快的下载速度，我们首先在列表中寻找Cygwin中国镜像的地址：<a href="http://www.cygwin.cn，如果找到就选中这个地址；如果找不到这个地址，就选一个国内的镜像地址，推荐使用清华镜像" target="_blank" rel="noopener">http://www.cygwin.cn，如果找到就选中这个地址；如果找不到这个地址，就选一个国内的镜像地址，推荐使用清华镜像</a> <a href="https://mirrors.tuna.tsinghua.edu.cn/cygwin/（不推荐阿里云镜像" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/cygwin/（不推荐阿里云镜像</a> <a href="http://mirrors.aliyun.com/cygwin/，实测下载内容速度极慢）选择完成后，点击“下一步”，" target="_blank" rel="noopener">http://mirrors.aliyun.com/cygwin/，实测下载内容速度极慢）选择完成后，点击“下一步”，</a><img src="https://lxzh.oss-cn-hangzhou.aliyuncs.com/markdown/1718301088023.png" width="269">
+
+</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2024/06/11/Build-mars-xlog-on-Windows/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxzh.app/2021/05/26/Random-Generator-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lxzh">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="龙心之火">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/05/26/Random-Generator-md/" itemprop="url">Random-Generator.md</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-26T20:27:44+08:00">
+                2021-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1  0 0 1<br>2  0 1 0<br>3  0 1 1<br>4  1 0 0<br>5  1 0 1</p>
+<pre><code>0   0.6
+  1 0.6
+1   0.4
+  0 0.4
+0 0 0.24
+1 1 0.24
+
+0 1 0.36
+1 0 0.36</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.lxzh.app/2019/11/22/Android-Java-Crash/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2634,256 +2899,6 @@ bit0-9:       10 bit MAN       +---+-------+--------------+</code></pre><blockqu
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.lxzh.app/2014/04/19/Basic-Sort-Algorithm-BinaryInsertSort/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lxzh">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="龙心之火">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/04/19/Basic-Sort-Algorithm-BinaryInsertSort/" itemprop="url">基础排序算法(三)——对半插入排序</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-04-19T12:20:52+08:00">
-                2014-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&ensp; &ensp; &ensp; 之前的文章介绍了<a href="http://blog.lxzh.app/2013/09/25/Basic-Sort-Algorithm-BubbleSort/"><font color="blue">冒泡排序</font></a>和<a href="http://blog.lxzh.app/2013/09/30/Basic-Sort-Algorithm-InsertionSort/"><font color="blue">插入排序</font></a>，这里再补充一个<code>对半插入排序</code>算法，它与<code>对半查找算法</code>（<code>二分查找算法</code>）有点相似之处。</p>
-<p>&ensp; &ensp; &ensp; 还是先上代码：</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2014/04/19/Basic-Sort-Algorithm-BinaryInsertSort/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.lxzh.app/2013/09/30/Basic-Sort-Algorithm-InsertionSort/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lxzh">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="龙心之火">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2013/09/30/Basic-Sort-Algorithm-InsertionSort/" itemprop="url">基础排序算法(二)——插入排序</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-09-30T23:45:52+08:00">
-                2013-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&ensp; &ensp; &ensp; 之前写了一个冒泡排序算法，这里再加一个<a href="http://student.zjzk.cn/course_ware/data_structure/web/paixu/paixu8.2.1.1.htm" target="_blank" rel="noopener"><font color="blue">插入排序算法</font></a>，链接里讲得也比较详细，不过为了熟练，还是自己亲自敲一遍，再次贴出来，分享一下</p>
-<p>&ensp; &ensp; &ensp; 还是先上代码：<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2013/09/30/Basic-Sort-Algorithm-InsertionSort/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2936,7 +2951,7 @@ bit0-9:       10 bit MAN       +---+-------+--------------+</code></pre><blockqu
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2949,7 +2964,7 @@ bit0-9:       10 bit MAN       +---+-------+--------------+</code></pre><blockqu
               
               <div class="site-state-item site-state-tags">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2970,7 +2985,7 @@ bit0-9:       10 bit MAN       +---+-------+--------------+</code></pre><blockqu
             <div class="links-of-author motion-element">
                 
                   <span class="links-of-author-item">
-                    <a href="https://github.com/ljf1239848066" target="_blank" title="GitHub">
+                    <a href="https://github.com/lxzh" target="_blank" title="GitHub">
                       
                         <i class="fa fa-fw fa-github"></i>GitHub</a>
                   </span>
@@ -2997,7 +3012,7 @@ bit0-9:       10 bit MAN       +---+-------+--------------+</code></pre><blockqu
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://www.lxzh123.com/" title="Lxzh123" target="_blank">Lxzh123</a>
+                    <a href="https://lxzh.app/" title="Lxzh123" target="_blank">Lxzh123</a>
                   </li>
                 
               </ul>
@@ -3023,7 +3038,7 @@ bit0-9:       10 bit MAN       +---+-------+--------------+</code></pre><blockqu
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
