@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>龙心之火</title>
-  <icon>https://www.gravatar.com/avatar/6a279c8af5ea6deaab208f3ed9be6884</icon>
+  <icon>https://www.gravatar.com/avatar/ab2ccc9b5dfdfed67b688130c59f7fc8</icon>
   <subtitle>Lxzh&#39;s Notes</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -11,7 +11,7 @@
   
   <author>
     <name>lxzh</name>
-    <email>1239848066@qq.com</email>
+    <email>ljf@lxzh.app</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
