@@ -5,9 +5,9 @@
   <subtitle>Lxzh&#39;s Notes</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://blog.lxzh.app/"/>
+  <link href="https://blog.lxzh.app/"/>
   <updated>2024-09-23T16:17:45.728Z</updated>
-  <id>http://blog.lxzh.app/</id>
+  <id>https://blog.lxzh.app/</id>
   
   <author>
     <name>lxzh</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Build-mars-xlog-on-Windows</title>
-    <link href="http://blog.lxzh.app/2024/06/11/Build-mars-xlog-on-Windows/"/>
-    <id>http://blog.lxzh.app/2024/06/11/Build-mars-xlog-on-Windows/</id>
+    <link href="https://blog.lxzh.app/2024/06/11/Build-mars-xlog-on-Windows/"/>
+    <id>https://blog.lxzh.app/2024/06/11/Build-mars-xlog-on-Windows/</id>
     <published>2024-06-10T17:38:26.000Z</published>
     <updated>2024-09-23T16:17:45.728Z</updated>
     
@@ -35,14 +35,14 @@
     </summary>
     
     
-      <category term="xlog" scheme="http://blog.lxzh.app/tags/xlog/"/>
+      <category term="xlog" scheme="https://blog.lxzh.app/tags/xlog/"/>
     
   </entry>
   
   <entry>
     <title>Random-Generator.md</title>
-    <link href="http://blog.lxzh.app/2021/05/26/Random-Generator-md/"/>
-    <id>http://blog.lxzh.app/2021/05/26/Random-Generator-md/</id>
+    <link href="https://blog.lxzh.app/2021/05/26/Random-Generator-md/"/>
+    <id>https://blog.lxzh.app/2021/05/26/Random-Generator-md/</id>
     <published>2021-05-26T12:27:44.000Z</published>
     <updated>2021-05-26T12:40:44.034Z</updated>
     
@@ -71,8 +71,8 @@
   
   <entry>
     <title>Android中Java的异常处理机制</title>
-    <link href="http://blog.lxzh.app/2019/11/22/Android-Java-Crash/"/>
-    <id>http://blog.lxzh.app/2019/11/22/Android-Java-Crash/</id>
+    <link href="https://blog.lxzh.app/2019/11/22/Android-Java-Crash/"/>
+    <id>https://blog.lxzh.app/2019/11/22/Android-Java-Crash/</id>
     <published>2019-11-21T17:30:02.000Z</published>
     <updated>2021-02-03T17:09:42.375Z</updated>
     
@@ -91,14 +91,14 @@
     </summary>
     
     
-      <category term="JVM" scheme="http://blog.lxzh.app/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.lxzh.app/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>如何查看Gradle插件的源码</title>
-    <link href="http://blog.lxzh.app/2019/11/08/View-Gradle-Plugin-Source-code/"/>
-    <id>http://blog.lxzh.app/2019/11/08/View-Gradle-Plugin-Source-code/</id>
+    <link href="https://blog.lxzh.app/2019/11/08/View-Gradle-Plugin-Source-code/"/>
+    <id>https://blog.lxzh.app/2019/11/08/View-Gradle-Plugin-Source-code/</id>
     <published>2019-11-07T18:10:40.000Z</published>
     <updated>2021-02-03T16:15:26.567Z</updated>
     
@@ -115,14 +115,14 @@
     </summary>
     
     
-      <category term="Little skill" scheme="http://blog.lxzh.app/tags/Little-skill/"/>
+      <category term="Little skill" scheme="https://blog.lxzh.app/tags/Little-skill/"/>
     
   </entry>
   
   <entry>
     <title>简单三步查看你浏览器保存的登录帐号密码</title>
-    <link href="http://blog.lxzh.app/2018/07/25/Three-Step-To-View-Your-Saved-Password/"/>
-    <id>http://blog.lxzh.app/2018/07/25/Three-Step-To-View-Your-Saved-Password/</id>
+    <link href="https://blog.lxzh.app/2018/07/25/Three-Step-To-View-Your-Saved-Password/"/>
+    <id>https://blog.lxzh.app/2018/07/25/Three-Step-To-View-Your-Saved-Password/</id>
     <published>2018-07-25T12:50:00.000Z</published>
     <updated>2021-02-03T16:13:47.622Z</updated>
     
@@ -135,14 +135,14 @@
     </summary>
     
     
-      <category term="网络安全" scheme="http://blog.lxzh.app/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+      <category term="网络安全" scheme="https://blog.lxzh.app/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
   <entry>
     <title>排序算法——汇总</title>
-    <link href="http://blog.lxzh.app/2018/07/24/Sort-Algorithm-Summarizing/"/>
-    <id>http://blog.lxzh.app/2018/07/24/Sort-Algorithm-Summarizing/</id>
+    <link href="https://blog.lxzh.app/2018/07/24/Sort-Algorithm-Summarizing/"/>
+    <id>https://blog.lxzh.app/2018/07/24/Sort-Algorithm-Summarizing/</id>
     <published>2018-07-24T08:18:01.000Z</published>
     <updated>2021-02-19T15:25:17.015Z</updated>
     
@@ -155,14 +155,14 @@
     </summary>
     
     
-      <category term="sort algorithm" scheme="http://blog.lxzh.app/tags/sort-algorithm/"/>
+      <category term="sort algorithm" scheme="https://blog.lxzh.app/tags/sort-algorithm/"/>
     
   </entry>
   
   <entry>
     <title>普通用户借助docker容器提权</title>
-    <link href="http://blog.lxzh.app/2018/04/18/Privilge-Escalation-By-Docker/"/>
-    <id>http://blog.lxzh.app/2018/04/18/Privilge-Escalation-By-Docker/</id>
+    <link href="https://blog.lxzh.app/2018/04/18/Privilge-Escalation-By-Docker/"/>
+    <id>https://blog.lxzh.app/2018/04/18/Privilge-Escalation-By-Docker/</id>
     <published>2018-04-17T16:25:09.000Z</published>
     <updated>2019-11-06T18:21:07.829Z</updated>
     
@@ -180,14 +180,14 @@
     </summary>
     
     
-      <category term="docker" scheme="http://blog.lxzh.app/tags/docker/"/>
+      <category term="docker" scheme="https://blog.lxzh.app/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>优雅的过滤广告</title>
-    <link href="http://blog.lxzh.app/2018/03/30/AdFilter-md/"/>
-    <id>http://blog.lxzh.app/2018/03/30/AdFilter-md/</id>
+    <link href="https://blog.lxzh.app/2018/03/30/AdFilter-md/"/>
+    <id>https://blog.lxzh.app/2018/03/30/AdFilter-md/</id>
     <published>2018-03-30T14:02:44.000Z</published>
     <updated>2019-11-06T18:21:07.949Z</updated>
     
@@ -202,14 +202,14 @@
     </summary>
     
     
-      <category term="Little skill" scheme="http://blog.lxzh.app/tags/Little-skill/"/>
+      <category term="Little skill" scheme="https://blog.lxzh.app/tags/Little-skill/"/>
     
   </entry>
   
   <entry>
     <title>CVE-2017-16995</title>
-    <link href="http://blog.lxzh.app/2018/03/21/CVE-2017-16995/"/>
-    <id>http://blog.lxzh.app/2018/03/21/CVE-2017-16995/</id>
+    <link href="https://blog.lxzh.app/2018/03/21/CVE-2017-16995/"/>
+    <id>https://blog.lxzh.app/2018/03/21/CVE-2017-16995/</id>
     <published>2018-03-20T18:02:35.000Z</published>
     <updated>2019-11-06T18:21:07.860Z</updated>
     
@@ -222,14 +222,14 @@
     </summary>
     
     
-      <category term="linux-kernel-exploits" scheme="http://blog.lxzh.app/tags/linux-kernel-exploits/"/>
+      <category term="linux-kernel-exploits" scheme="https://blog.lxzh.app/tags/linux-kernel-exploits/"/>
     
   </entry>
   
   <entry>
     <title>Half Precision float</title>
-    <link href="http://blog.lxzh.app/2017/12/09/Half-Precision-float/"/>
-    <id>http://blog.lxzh.app/2017/12/09/Half-Precision-float/</id>
+    <link href="https://blog.lxzh.app/2017/12/09/Half-Precision-float/"/>
+    <id>https://blog.lxzh.app/2017/12/09/Half-Precision-float/</id>
     <published>2017-12-08T16:22:44.000Z</published>
     <updated>2018-03-20T18:25:08.000Z</updated>
     
@@ -255,8 +255,8 @@ bit0-9:       10 bit MAN       +---+-------+--------------+&lt;/code&gt;&lt;/pre
   
   <entry>
     <title>Hexo博客正文嵌入QQ表情</title>
-    <link href="http://blog.lxzh.app/2017/02/18/HexoInsertQQImg/"/>
-    <id>http://blog.lxzh.app/2017/02/18/HexoInsertQQImg/</id>
+    <link href="https://blog.lxzh.app/2017/02/18/HexoInsertQQImg/"/>
+    <id>https://blog.lxzh.app/2017/02/18/HexoInsertQQImg/</id>
     <published>2017-02-18T13:26:41.000Z</published>
     <updated>2019-11-06T18:21:07.828Z</updated>
     
@@ -270,14 +270,14 @@ bit0-9:       10 bit MAN       +---+-------+--------------+&lt;/code&gt;&lt;/pre
     </summary>
     
     
-      <category term="css" scheme="http://blog.lxzh.app/tags/css/"/>
+      <category term="css" scheme="https://blog.lxzh.app/tags/css/"/>
     
   </entry>
   
   <entry>
     <title>ShellCmd</title>
-    <link href="http://blog.lxzh.app/2017/01/08/ShellCmd/"/>
-    <id>http://blog.lxzh.app/2017/01/08/ShellCmd/</id>
+    <link href="https://blog.lxzh.app/2017/01/08/ShellCmd/"/>
+    <id>https://blog.lxzh.app/2017/01/08/ShellCmd/</id>
     <published>2017-01-08T05:34:07.000Z</published>
     <updated>2017-02-03T15:55:14.000Z</updated>
     
@@ -294,14 +294,14 @@ bit0-9:       10 bit MAN       +---+-------+--------------+&lt;/code&gt;&lt;/pre
     </summary>
     
     
-      <category term="Shell" scheme="http://blog.lxzh.app/tags/Shell/"/>
+      <category term="Shell" scheme="https://blog.lxzh.app/tags/Shell/"/>
     
   </entry>
   
   <entry>
     <title>Compile And Install FFmpeg</title>
-    <link href="http://blog.lxzh.app/2017/01/08/Compile-And-Install-FFmpeg/"/>
-    <id>http://blog.lxzh.app/2017/01/08/Compile-And-Install-FFmpeg/</id>
+    <link href="https://blog.lxzh.app/2017/01/08/Compile-And-Install-FFmpeg/"/>
+    <id>https://blog.lxzh.app/2017/01/08/Compile-And-Install-FFmpeg/</id>
     <published>2017-01-08T05:33:18.000Z</published>
     <updated>2017-02-17T15:29:41.000Z</updated>
     
@@ -323,14 +323,14 @@ bit0-9:       10 bit MAN       +---+-------+--------------+&lt;/code&gt;&lt;/pre
     </summary>
     
     
-      <category term="FFmpeg" scheme="http://blog.lxzh.app/tags/FFmpeg/"/>
+      <category term="FFmpeg" scheme="https://blog.lxzh.app/tags/FFmpeg/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://blog.lxzh.app/2016/01/01/hello-world/"/>
-    <id>http://blog.lxzh.app/2016/01/01/hello-world/</id>
+    <link href="https://blog.lxzh.app/2016/01/01/hello-world/"/>
+    <id>https://blog.lxzh.app/2016/01/01/hello-world/</id>
     <published>2016-01-01T05:33:18.000Z</published>
     <updated>2017-10-17T18:02:39.000Z</updated>
     
@@ -350,8 +350,8 @@ bit0-9:       10 bit MAN       +---+-------+--------------+&lt;/code&gt;&lt;/pre
   
   <entry>
     <title>排序算法进阶(一)——快速排序算法(基本类型与复杂类型)</title>
-    <link href="http://blog.lxzh.app/2015/08/01/Advanced-Sorting-Algorithm-QuickSorkTemplate/"/>
-    <id>http://blog.lxzh.app/2015/08/01/Advanced-Sorting-Algorithm-QuickSorkTemplate/</id>
+    <link href="https://blog.lxzh.app/2015/08/01/Advanced-Sorting-Algorithm-QuickSorkTemplate/"/>
+    <id>https://blog.lxzh.app/2015/08/01/Advanced-Sorting-Algorithm-QuickSorkTemplate/</id>
     <published>2015-08-01T05:06:23.000Z</published>
     <updated>2020-12-25T15:50:25.058Z</updated>
     
@@ -366,14 +366,14 @@ bit0-9:       10 bit MAN       +---+-------+--------------+&lt;/code&gt;&lt;/pre
     </summary>
     
     
-      <category term="data structure" scheme="http://blog.lxzh.app/tags/data-structure/"/>
+      <category term="data structure" scheme="https://blog.lxzh.app/tags/data-structure/"/>
     
   </entry>
   
   <entry>
     <title>排序算法进阶(一)——快速排序算法</title>
-    <link href="http://blog.lxzh.app/2015/08/01/Advanced-Sorting-Algorithm-QuickSork/"/>
-    <id>http://blog.lxzh.app/2015/08/01/Advanced-Sorting-Algorithm-QuickSork/</id>
+    <link href="https://blog.lxzh.app/2015/08/01/Advanced-Sorting-Algorithm-QuickSork/"/>
+    <id>https://blog.lxzh.app/2015/08/01/Advanced-Sorting-Algorithm-QuickSork/</id>
     <published>2015-07-31T17:02:02.000Z</published>
     <updated>2019-11-06T18:21:07.829Z</updated>
     
@@ -387,14 +387,14 @@ bit0-9:       10 bit MAN       +---+-------+--------------+&lt;/code&gt;&lt;/pre
     </summary>
     
     
-      <category term="data structure" scheme="http://blog.lxzh.app/tags/data-structure/"/>
+      <category term="data structure" scheme="https://blog.lxzh.app/tags/data-structure/"/>
     
   </entry>
   
   <entry>
     <title>Csharp PPT Operator</title>
-    <link href="http://blog.lxzh.app/2015/07/24/Csharp-PPT-Operator/"/>
-    <id>http://blog.lxzh.app/2015/07/24/Csharp-PPT-Operator/</id>
+    <link href="https://blog.lxzh.app/2015/07/24/Csharp-PPT-Operator/"/>
+    <id>https://blog.lxzh.app/2015/07/24/Csharp-PPT-Operator/</id>
     <published>2015-07-24T15:56:40.000Z</published>
     <updated>2017-02-18T15:40:01.000Z</updated>
     
@@ -414,8 +414,8 @@ bit0-9:       10 bit MAN       +---+-------+--------------+&lt;/code&gt;&lt;/pre
   
   <entry>
     <title>Extjs导出excel数据</title>
-    <link href="http://blog.lxzh.app/2015/04/18/Extjs-Export-To-Excel/"/>
-    <id>http://blog.lxzh.app/2015/04/18/Extjs-Export-To-Excel/</id>
+    <link href="https://blog.lxzh.app/2015/04/18/Extjs-Export-To-Excel/"/>
+    <id>https://blog.lxzh.app/2015/04/18/Extjs-Export-To-Excel/</id>
     <published>2015-04-18T10:49:48.000Z</published>
     <updated>2017-02-21T15:38:57.000Z</updated>
     
@@ -429,14 +429,14 @@ bit0-9:       10 bit MAN       +---+-------+--------------+&lt;/code&gt;&lt;/pre
     </summary>
     
     
-      <category term="Extjs" scheme="http://blog.lxzh.app/tags/Extjs/"/>
+      <category term="Extjs" scheme="https://blog.lxzh.app/tags/Extjs/"/>
     
   </entry>
   
   <entry>
     <title>查找算法</title>
-    <link href="http://blog.lxzh.app/2014/04/19/Lookup-Algorithm/"/>
-    <id>http://blog.lxzh.app/2014/04/19/Lookup-Algorithm/</id>
+    <link href="https://blog.lxzh.app/2014/04/19/Lookup-Algorithm/"/>
+    <id>https://blog.lxzh.app/2014/04/19/Lookup-Algorithm/</id>
     <published>2014-04-19T08:58:51.000Z</published>
     <updated>2018-07-30T02:51:19.000Z</updated>
     
@@ -449,14 +449,14 @@ bit0-9:       10 bit MAN       +---+-------+--------------+&lt;/code&gt;&lt;/pre
     </summary>
     
     
-      <category term="data structure" scheme="http://blog.lxzh.app/tags/data-structure/"/>
+      <category term="data structure" scheme="https://blog.lxzh.app/tags/data-structure/"/>
     
   </entry>
   
   <entry>
     <title>基础排序算法——汇总</title>
-    <link href="http://blog.lxzh.app/2014/04/19/Basic-Sort-Algorithm-Summarizing/"/>
-    <id>http://blog.lxzh.app/2014/04/19/Basic-Sort-Algorithm-Summarizing/</id>
+    <link href="https://blog.lxzh.app/2014/04/19/Basic-Sort-Algorithm-Summarizing/"/>
+    <id>https://blog.lxzh.app/2014/04/19/Basic-Sort-Algorithm-Summarizing/</id>
     <published>2014-04-19T08:11:01.000Z</published>
     <updated>2017-02-18T15:41:52.000Z</updated>
     
@@ -469,7 +469,7 @@ bit0-9:       10 bit MAN       +---+-------+--------------+&lt;/code&gt;&lt;/pre
     </summary>
     
     
-      <category term="data structure" scheme="http://blog.lxzh.app/tags/data-structure/"/>
+      <category term="data structure" scheme="https://blog.lxzh.app/tags/data-structure/"/>
     
   </entry>
   
